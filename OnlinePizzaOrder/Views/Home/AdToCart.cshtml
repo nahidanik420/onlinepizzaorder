@@ -1,0 +1,207 @@
+﻿@model OnlinePizzaOrder.Models.tbl_product
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pizza Order</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/pizzaorder/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/pizzaorder/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/Content/pizzaorder/css/owl.carousel.css" />
+    <link rel="stylesheet" href="~/Content/pizzaorder/css/animate.css" />
+    <link rel="stylesheet" href="~/Content/pizzaorder/css/style.css" />
+
+    <style>
+        .foodImg img {
+            width: 100%;
+            height: 450px;
+            border-radius: 3px;
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, .5);
+        }
+
+        .tbl_col {
+            background: #ff2a6b;
+            color: white;
+        }
+
+        .foodTag p {
+            font-size: 18px;
+        }
+
+        .btnD:hover {
+            background-color: #ff2a6b;
+            border: none;
+        }
+        .header-search a {
+            width: 50px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- Header section -->
+    <header class="header-section">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-social">
+                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                    <a href="#"><i class="fa fa-behance"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                </div>
+                <div class="user-panel">
+                    @if (Session["u_id"] == null)
+                    {
+                        @Html.ActionLink("Sign Up", "SignUp", "Home", null, new { @class = "ht" })
+                        @Html.ActionLink("Sign In", "Login", "Home", null, new { @class = "ht" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Sign Out", "Logout", "Home", null, new { @class = "ht" })
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <a href="index.html" class="site-logo">
+                    <img src="~/Content/pizzaorder/img/logo.png" alt="">
+                </a>
+                <div class="nav-switch">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <div class="header-search">
+                    <a href="@Url.Action("checkout", "Home")">
+                        <i class="fa fa-cart-plus"></i>
+                        @if (TempData["cartto"] == null)
+                        {
+
+                            <span>(0)</span>
+                        }
+                        else
+                        {
+
+                            <span> (@TempData["cartto"])</span>
+
+                        }
+                    </a>
+                </div>
+                <ul class="main-menu">
+                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li><a href="@Url.Action("Features", "Home")">Menu</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="@Url.Action("Contact", "Home")">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- Header section end -->
+    <!--Food details start-->
+
+    @using (@Html.BeginForm())
+    {
+        <div class="fooddetails">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="col-md-8">
+                        <div class="foodTag">
+                            <p>Details of FoodName</p>
+                            <hr>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="foodImg">
+                            <img src="@Url.Content(Model.pro_image)" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th class="tbl_col">Name:</th>
+                                <td>@Model.pro_name </td>
+                            </tr>
+
+                            <tr>
+                                <th class="tbl_col">Description:</th>
+                                <td class="text-justify">@Model.pro_desc</td>
+                            </tr>
+
+                            <tr>
+                                <th class="tbl_col">Price:</th>
+                                <td>&#2547 @Model.pro_price </td>
+                            </tr>
+                            <tr>
+                                <th class="tbl_col">Quantity</th>
+                                <td><input type="number" value="1" name="qty" id="qty" min="1" max="10" > </td>
+                            </tr>
+                        </table>
+                        <input type="submit" value="Add to Cart" class="btn btn-primary" />
+                    </div>
+
+                    <div class="col-md-2">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+        <!--Food details end-->
+        <!-- Footer section  -->
+        <footer class="footer-section set-bg" data-setbg="/Content/pizzaorder/img/footer-bg.jpg">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="footer-logo">
+                            <img src="~/Content/pizzaorder/img/logo.png" alt="">
+                        </div>
+                        <div class="footer-social">
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                            <a href="#"><i class="fa fa-behance"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-lg-right">
+                        <ul class="footer-menu">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Features</a></li>
+                            <li><a href="#">Receipies</a></li>
+                            <li><a href="#">Reviews</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                        <p class="copyright">
+                            Copyright &copy; Project | CSE3200 | AUST
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer section end -->
+        <!--====== Javascripts & Jquery ======-->
+        <script src="~/Content/pizzaorder/js/jquery-3.2.1.min.js"></script>
+        <script src="~/Content/pizzaorder/js/owl.carousel.min.js"></script>
+        <script src="~/Content/pizzaorder/js/main.js"></script>
+    </body>
+</html>

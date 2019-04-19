@@ -1,0 +1,535 @@
+/* =================================
+------------------------------------
+  Food Blog - Web Template
+  Version: 1.0
+ ------------------------------------ 
+ ====================================*/
+
+/*----------------------------------------*/
+/* Template default CSS
+/*----------------------------------------*/
+
+html,
+body {
+	height: 100%;
+	font-family: 'Poppins', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-weight: 500;
+	color: #474747;
+}
+
+h1 {
+	font-size: 70px;
+}
+
+h2 {
+	font-size: 36px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+h4 {
+	font-size: 24px;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+h6 {
+	font-size: 16px;
+}
+
+p {
+	font-size: 14.1px;
+	color: #838383;
+	line-height: 2.1;
+}
+
+img {
+	max-width: 100%;
+}
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+	outline: none;
+}
+
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+}
+
+/*---------------------
+	Helper CSS
+-----------------------*/
+
+.section-title {
+	margin-bottom: 48px;
+	position: relative;
+	padding-top: 18px;
+}
+
+.section-title:after {
+	position: absolute;
+	content: "";
+	width: 56px;
+	height: 5px;
+	left: 0;
+	top: 0;
+	background: #ff2a6b;
+	-webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+	clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+}
+
+.section-title h2,
+.section-title h3 {
+	font-weight: 700;
+}
+
+.set-bg {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+}
+
+.spad {
+	padding-top: 96px;
+	padding-bottom: 96px;
+}
+
+.text-white h1,
+.text-white h2,
+.text-white h3,
+.text-white h4,
+.text-white h5,
+.text-white h6,
+.text-white p,
+.text-white span,
+.text-white li,
+.text-white a {
+	color: #fff;
+}
+
+.rating i {
+	color: #fbb710;
+}
+
+.rating .is-fade {
+	color: #e0e3e4;
+}
+
+/*---------------------
+	Commom elements
+-----------------------*/
+
+/* buttons */
+
+.site-btn {
+	display: inline-block;
+	min-width: 178px;
+	text-align: center;
+	border: none;
+	padding: 18px 5px;
+	font-weight: 400;
+	font-size: 14px;
+	position: relative;
+	color: #fff;
+	cursor: pointer;
+	background: #ff2a6b;
+}
+
+
+
+/*------------------
+  Header section
+---------------------*/
+
+.header-section {
+	clear: both;
+}
+
+.header-top {
+	background: #ff2a6b;
+	overflow: hidden;
+	padding: 18px 0;
+}
+
+.header-social {
+	float: left;
+}
+
+.header-social a {
+	color: #fff;
+	margin-right: 35px;
+}
+
+.user-panel {
+	float: right;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.user-panel a {
+	color: #fff;
+	margin-left: 30px;
+	transition: .5s;
+}
+
+.user-panel a:hover {
+	color: #ff2a6b;
+	background: #fff;
+	padding: 10px 15px;
+	border-radius: 5px;
+}
+
+.header-bottom {
+	padding: 38px 0;
+	position: relative;
+}
+
+.site-logo {
+	display: inline-block;
+}
+
+.nav-switch {
+	display: none;
+}
+
+.main-menu,
+.footer-menu {
+	list-style: none;
+	float: right;
+	margin-right: 160px;
+}
+
+.main-menu li,
+.footer-menu li {
+	display: inline;
+}
+
+.main-menu li a,
+.footer-menu li a {
+	display: inline-block;
+	font-size: 15px;
+	font-weight: 500;
+	color: #474747;
+	padding: 25px 20px;
+	transition: .7s;
+}
+
+.main-menu li a:hover,
+.footer-menu li a:hover {
+	color: #fff;
+	background: #ff2a6b;
+	padding: 10px 15px;
+	border-radius: 5px;
+}
+
+.header-search {
+	float: right;
+	margin-top: 15px;
+}
+
+.header-search a {
+	height: 37px;
+	width: 34px;
+	border: none;
+	background: #ff2a6b;
+	color: #fff;
+	border-radius: 4px;
+	display: inline-block;
+	text-align: center;
+	padding-top: 7px;
+}
+
+/*------------------
+  Hero Section
+---------------------*/
+
+.hero-section {
+	clear: both;
+}
+
+.hero-slide-item {
+	height: 694px;
+	display: table;
+	width: 100%;
+	overflow: hidden;
+}
+
+.hs-text {
+	vertical-align: middle;
+	display: table-cell;
+	text-align: center;
+}
+
+.hs-title-1,
+.hs-title-2,
+.hs-title-3 {
+	font-weight: 700;
+	color: #fff;
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.hs-title-1 span,
+.hs-title-2 span,
+.hs-title-3 span {
+	display: inline-block;
+	border-radius: 5px;
+	position: relative;
+	-webkit-box-shadow: -1px -5px 20px 0px rgba(0, 0, 0, 0.3);
+	        box-shadow: -1px -5px 20px 0px rgba(0, 0, 0, 0.3);
+	opacity: 0;
+}
+
+.hs-title-1 {
+	font-size: 72px;
+	z-index: 3;
+}
+
+.hs-title-1 span {
+	padding: 0 28px;
+	background: #ff2a6b;
+	-webkit-transform: rotate(4deg);
+	    -ms-transform: rotate(4deg);
+	        transform: rotate(4deg);
+}
+
+.hs-title-2 {
+	font-size: 48px;
+	z-index: 4;
+}
+
+.hs-title-2 span {
+	padding: 5px 28px;
+	background: #fdc856;
+	-webkit-transform: rotate(0deg);
+	    -ms-transform: rotate(0deg);
+	        transform: rotate(0deg);
+	left: 0;
+	top: 0;
+}
+
+.hs-title-3 {
+	font-size: 36px;
+	z-index: 5;
+}
+
+.hs-title-3 span {
+	padding: 10px 28px;
+	background: #bdde64;
+	-webkit-transform: rotate(0deg);
+	    -ms-transform: rotate(0deg);
+	        transform: rotate(0deg);
+	top: 0;
+}
+
+.owl-item.active .hero-slide-item .hs-title-1 span,
+.owl-item.active .hero-slide-item .hs-title-2 span,
+.owl-item.active .hero-slide-item .hs-title-3 span {
+	opacity: 1;
+}
+
+.owl-item.active .hero-slide-item .hs-title-1 span {
+	-webkit-transform: rotate(0);
+	    -ms-transform: rotate(0);
+	        transform: rotate(0);
+	-webkit-transition: all 0.4s ease 0.6s;
+	-o-transition: all 0.4s ease 0.6s;
+	transition: all 0.4s ease 0.6s;
+}
+
+.owl-item.active .hero-slide-item .hs-title-2 span {
+	-webkit-transform: rotate(-6deg);
+	    -ms-transform: rotate(-6deg);
+	        transform: rotate(-6deg);
+	left: 120px;
+	top: -15px;
+	-webkit-transition: all 0.4s ease 0.8s;
+	-o-transition: all 0.4s ease 0.8s;
+	transition: all 0.4s ease 0.8s;
+}
+
+.owl-item.active .hero-slide-item .hs-title-3 span {
+	-webkit-transform: rotate(3deg);
+	    -ms-transform: rotate(3deg);
+	        transform: rotate(3deg);
+	top: -15px;
+	-webkit-transition: all 0.4s ease 1s;
+	-o-transition: all 0.4s ease 1s;
+	transition: all 0.4s ease 1s;
+}
+
+.hero-slider .owl-next {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	color: #ff2a6b;
+	border-radius: 50%;
+	right: 110px;
+	top: calc(50% - 20px);
+	text-align: center;
+	font-size: 24px;
+}
+
+
+.menuimg{
+	text-align: center;
+	margin-top: 30px;
+}
+
+.box{
+	position: relative;
+	width: 100%;
+	height: 480px;
+	margin-top: 40px;
+	margin-bottom:30px;
+	overflow: hidden;
+	border-radius: 10px;
+	background: #000;
+	box-shadow: 0px 20px 50px rgba(0, 0, 0, .5);
+	transition: .5s;
+}
+.box:hover{
+	transform: translateY(30px);
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, .5);
+}
+
+.box .imgBox{
+	position: relative;
+}
+
+.box .imgBox img{
+	transition: .5s;
+}
+
+.box:hover .imgBox img{
+	opacity: .5;
+	transform: translateY(-40px);
+}
+
+.box .content{
+	position: absolute;
+	bottom: -40px;
+	left: 0;
+	padding: 20px;
+	box-sizing: border-box;
+	transition: .5s;
+	opacity: 0;
+}
+
+
+.box .content h4 {
+    position: absolute;
+    top: -200px;
+    left: 0px;
+    padding: 10px 15px;
+    background-color: #ff2a6b;
+    color: #fff;
+    border-radius: 0px 5px 5px 0px;
+
+}
+
+
+
+.box:hover .content{
+	bottom: 0px;
+	opacity: 1;
+}
+
+.box .content h3{
+	font-size: 36px;
+	color: #fff;
+	font-weight: 700;
+}
+
+.box .content p{
+	font-size: 18px;
+	color: #fff;
+	font-weight: 400;
+	text-align: justify;
+}
+
+.btnD:hover{
+	background-color: #ff2a6b;
+	border: none;
+}
+
+
+.footer-section {
+	padding: 60px 70px 50px ;
+	margin-top: 30px;
+}
+
+.footer-social {
+	margin-top: 25px;
+}
+
+.footer-social a {
+	color: #b8b8b8;
+	font-size: 14px;
+	margin-right: 30px;
+}
+
+.footer-social a:hover {
+	color: #ff2a6b;
+}
+
+.footer-menu {
+	float: none;
+	margin-right: 0;
+}
+
+.footer-menu li a {
+	padding: 20px 15px;
+}
+
+.footer-menu li:last-child a {
+	padding-right: 0;
+}
+
+.copyright {
+	margin-bottom: 0;
+	padding-top: 10px;
+}
+
+.foodImg img{
+	width: 100%;
+	height: 450px;
+	border-radius: 3px;
+	box-shadow: 0px 10px 10px rgba(0, 0, 0, .5);
+}
+
+.tbl_col{
+	background: #ff2a6b;
+	color: white;
+}
+
+.foodTag p{
+	font-size: 18px;
+}
+
